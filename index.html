@@ -18,21 +18,23 @@
 		}
 
 		if (usuario != null && usuario != "" && usuario != false && usuario != undefined){
-			if (idioma == "es") {
-				self.location.href="index.es.html";
-			} else if (idioma == "pt") {
-				self.location.href="index.pt.html";
-			} else {
-				self.location.href="index.en.html";
-			}
+			selector('inde');
+			// if (idioma == "es") {
+			// 	self.location.href="index.es.html";
+			// } else if (idioma == "pt") {
+			// 	self.location.href="index.pt.html";
+			// } else {
+			// 	self.location.href="index.en.html";
+			// }
 		} else {
-			if (idioma == "es") {
-				self.location.href="inicio.es.html";
-			} else if (idioma == "pt") {
-				self.location.href="inicio.pt.html";
-			} else {
-				self.location.href="inicio.en.html";
-			}
+			selector('inic')
+			// if (idioma == "es") {
+			// 	self.location.href="inicio.es.html";
+			// } else if (idioma == "pt") {
+			// 	self.location.href="inicio.pt.html";
+			// } else {
+			// 	self.location.href="inicio.en.html";
+			// }
 		}
 
 	</script>

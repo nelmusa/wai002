@@ -23,24 +23,6 @@
 		    document.addEventListener("offline", onOffline, false);
 			document.addEventListener('backbutton', closeApp, false);
         }
-
-        function open_web() {
-        	if(checkConnection()=="no"){
-        		onOffline();
-        	}else{
-	        	var ref = window.open('http://www.wai-news.com', '_blank','location=yes');
-			    ref.addEventListener("loaderror", onOffline, false);
-			}        
-        }
-		
-		function open_policy(){
-        	if(checkConnection()=="no"){
-        		onOffline();
-        	}else{
-		        var ref = window.open('http://www.wai-news.com/index.php?option=com_content&view=article&id=190&Itemid=435', '_blank', 'EnableViewPortScale=yes');
-			    ref.addEventListener("loaderror", onOffline, false);	
-			}
-		}
 	</script>
 </head>
 <body onload="user_ini()">
@@ -54,25 +36,22 @@
 				<a href="javascript:signout();">Sign Out</a>
 			</li>
 			<li class="item1">
-				<!-- <a href="news.en.html">WAI News<span>0</span></a> -->
-				<a href="news.en.html">WAI News</a>
+				<a id="new" href="javascript:selector('new');">WAI News</a>
 			</li>
 			<li class="item2">
-				<!-- <a href="#" onclick="window.open('http://www.wai-news.com', '_blank')">WAI Web Site</a> -->
-				<a id="Web" href="javascript:open_web();">WAI Web Site</a>
+				<a id="Web" href="javascript:selector('web');">WAI Web Site</a>
 			</li>
 			<li class="item3">
-				<!-- <a href="documents.en.html">Documents<span>999</span></a> -->
-				<a href="documents.en.html">Documents</a>
+				<a id="doc" href="javascript:selector('doc');">Documents</a>
 			</li>
 			<li class="item4">
 				<a href="#">Customer Access<mas>+</mas></a>
 				<ul>
-					<li class="subitem1"><a href="sendorder.en.html">Send Order</a></li>
-					<li class="subitem2"><a href="contact.en.html">Contact Us</a></li>
+					<li class="subitem1"><a href="javascript:selector('snd');">Send Order</a></li>
+					<li class="subitem2"><a href="javascript:selector('con');">Contact Us</a></li>
 				</ul>
 			</li>
-			<li class="item5"><a href="share.en.html">Share It</a>
+			<li class="item5"><a href="javascript:selector('sha');">Share It</a>
 			</li>
 			<li class="item6"><a href="#">Languaje<mas>+</mas></a>
 				<ul>
@@ -80,8 +59,7 @@
 					<li class="subitem2"><a href="javascript:cambiar_idioma('pt');">Portuguese</a></li>
 				</ul>
 			</li>
-			<li class="item7">
-				<a href='newprod.en.html'>New Products</a>
+			<li class="item7"><a href="javascript:selector('pro');">New Products</a>
 			</li>
 			<li class="item8">
 				<a href="javascript:noti_mail();">Feedback</a>
@@ -93,7 +71,7 @@
 		<img src="img/TRANSPO Logo.png" style="width: 30%; max-width: 300px; height: auto">
 	</div>
 
-	<h2 id="policy" onclick="javascript:open_policy();">Private Policy</h2>
+	<h2 id="policy" onclick="javascript:selector('pri');">Private Policy</h2>
 	<!-- <div class="policy" href="#" onclick="window.open('http://www.wai-news.com/index.php?option=com_content&view=article&id=190&Itemid=435', '_blank', 'EnableViewPortScale=yes')">Private Policy</div> -->
 
 	<script type="text/javascript">

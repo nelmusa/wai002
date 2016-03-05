@@ -34,7 +34,7 @@
 				<!-- <input type="button" value="Cancel" id="cancel" onclick="closeApp();"> -->
 			</form>
 			<div class="login-help">
-				<a href="registro.pt.html">pt Registrar</a>
+				<a href="javascript:selector('reg');">pt Registrar</a>
 				<!-- <a href="registro.en.html">Registrarse</a> • <a href="lostpass.en.html">Forgot Password</a> -->
 			</div>
 
@@ -62,7 +62,7 @@
 		 	
 				}else{
 		 	
-					alert(respuestaServer.mensaje)
+					showAlert(respuestaServer.mensaje,'Error');
 
 					var tit = document.getElementById('mensaje');
   					tit.childNodes[0].nodeValue = respuestaServer.mensaje;

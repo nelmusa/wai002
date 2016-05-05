@@ -100,7 +100,7 @@ function menu_dina(opcion){
     }
 }
 
-function signout(){
+function signinout(){
 	var usuario = localStorage.usuario;
 
 	if (usuario != null && usuario != "" && usuario != false && usuario != undefined){

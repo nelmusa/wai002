@@ -4,23 +4,32 @@
 	<title>Inicio</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
-	<link rel="stylesheet" type="text/css" media="all" href="css/inicio.css" />
+	<link href="css/inicio.css" rel="stylesheet" type="text/css">
+	<link href="css/intro.css" rel="stylesheet" type="text/css">
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <script type="text/javascript" src="js/funciones.js"></script>
+	<script type="text/javascript" src="js/funciones.js"></script>
 
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8">
         document.addEventListener("deviceready", onDeviceReady, false);
         function onDeviceReady() {
-            document.addEventListener("offline", onOffline, false);
-			document.addEventListener('backbutton', closeApp, false);
+		    document.addEventListener("offline", onOffline, false);
         }
-    </script>
+
+       function regresar(){
+        	self.location.href="intro.html";
+        }
+	</script>
 
 </head>
 <body>
+    <div id="header">
+        <div class="back" onclick="CambiarHoja(4)" align="left">
+           	<img src="img/back64.png" style="width: 50%; height: auto">                
+        </div>
+    </div> 
     <div class="modal">
 		<div class="login-card">
 			<div align="center">
@@ -30,14 +39,14 @@
 			<h2 id="mensaje">Favor ingresar su Email para continuar</h2>
 			<form id="formulario">
 				<input type="email" id="email" name="email" placeholder="Email">
-				<input type="submit" value="Continuar" id="login" >
+				<input type="submit" value="Continuar" id="login">
+				<input type="button" value="Regresar" id="login" onclick="self.location.href='index.es.html';">
 				<!-- <input type="button" value="Cancel" id="cancel" onclick="closeApp();"> -->
 			</form>
 			<div class="login-help">
 				<a href="javascript:selector('regi');">Registrarse</a>
 				<!-- <a href="registro.en.html">Registrarse</a> • <a href="lostpass.en.html">Forgot Password</a> -->
 			</div>
-
 		</div>
 	</div>
 

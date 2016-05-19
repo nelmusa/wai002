@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="msapplication-tap-highlight" content="no" />
-	<title>Main Menu</title>
+	<title>Settings</title>
 
 	<link rel="stylesheet" type="text/css" media="all" href="css/index.css">
 	<link rel="stylesheet" type="text/css" media="all" href="css/wai.css">
@@ -30,77 +30,36 @@
 	<div align="center">
 		<img src="img/WAI Logo.png" style="width: 20%; max-width: 150px; height: auto">
 	</div>
-	<h1 id="usuario"> </h1>
+	<h1 id="sett">Settings</h1>
 	<div id="wrapper" class="animated fadein">
 		<ul class="menu">
-			<li class="item1">
-				<a href="javascript:selector('news');">
-					<i class="icon-news"></i>
-					WAI News
+			<li id="item21" class="item21">
+				<a id="notify" href="javascript:conf_notify();">
+					<i class="icon-notify"></i>
+					Notifications
 				</a>
 			</li>
-			<li class="item2">
-				<a href="javascript:selector('web');">
-					<i class="icon-web"></i>
-					WAI Web Site
+			<li class="item22">
+				<a id="calific" href="javascript:selector('cali');">
+					<i class="icon-calific"></i>
+					Rate App
 				</a>
 			</li>
-			<li class="item3">
+			<li class="item23">
 				<a href="#">
-					<i class="icon-document"></i>
-					Documents
+					<i class="icon-language"></i>
+					Languaje
 					<mas>+</mas>
 				</a>
 				<ul>
-					<li class="subitem1"><a href="javascript:selector('dgen');">Flyers</a></li>
-					<li class="subitem2"><a href="javascript:selector('dcat');">Catalogs</a></li>
+					<li class="subitem1"><a href="javascript:cambiar_idioma('es');">Spanish</a></li>
+					<li class="subitem2"><a href="javascript:cambiar_idioma('pt');">Portuguese</a></li>
 				</ul>
 			</li>
-			<li class="item4">
-				<a href="#">
-					<i class="icon-customer"></i>
-					Customer Access
-					<mas>+</mas>
-				</a>
-				<ul>
-					<li class="subitem1"><a href="javascript:selector('send');">Send Order</a></li>
-					<li class="subitem2"><a href="javascript:selector('cont');">Contact Us</a></li>
-				</ul>
-			</li>
-			<li class="item5">
-				<a href="javascript:selector('shar');">
-					<i class="icon-shareit"></i>
-					Share It
-				</a>
-			</li>
-			<li class="item7">
-				<a href="javascript:selector('newp');">
-					<i class="icon-new"></i>
-					New Products
-				</a>
-			</li>
-			<li class="item8">
-				<a href="javascript:noti_mail();">
-					<i class="icon-feedback"></i>
-					Feedback
-				</a>
-			</li>
-			<li class="item9" id="inout90">
-				<a href="javascript:signinout();">
-					<i class="icon-signin"></i>
-					Sign In
-				</a>
-			</li>			
-			<li class="item9" id="inout91">
-				<a href="javascript:signinout();">
-					<i class="icon-signout"></i>
-					Sign out
-				</a>
-			</li>
-			<li class="item10">
-				<a href="javascript:selector('sett');">
-					<i class="icon-config"></i>
-					Settings
+			<li class="item24">
+				<a href="javascript:selector('inde');">
+					<i class="icon-return"></i>
+					Return
 				</a>
 			</li>
 		</ul>
@@ -111,7 +70,6 @@
 	</div>
 
 	<h2 id="policy" onclick="javascript:selector('pri');">Private Policy</h2>
-	<!-- <div class="policy" href="#" onclick="window.open('http://www.wai-news.com/index.php?option=com_content&view=article&id=190&Itemid=435', '_blank', 'EnableViewPortScale=yes')">Private Policy</div> -->
 
 	<script type="text/javascript">
 		$(function() {
@@ -133,6 +91,7 @@
 				}
 			});
 		});
+	
 	</script>
 
 	<script type="text/javascript" src="js/index.js"></script>

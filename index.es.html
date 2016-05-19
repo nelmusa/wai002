@@ -7,6 +7,7 @@
 	<title>Menu Principal</title>
 
 	<link rel="stylesheet" type="text/css" media="all" href="css/index.css">
+	<link rel="stylesheet" type="text/css" media="all" href="css/wai.css">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scale=no, maximum-scale=1" />
 
@@ -30,50 +31,78 @@
 		<img src="img/WAI Logo.png" style="width: 20%; max-width: 150px; height: auto">
 	</div>
 	<h1 id="usuario"> </h1>
-	<div id="wrapper">
+	<div id="wrapper" class="animated fadein">
 		<ul class="menu">
 			<li class="item1">
-				<!-- <a href="news.es.html">Noticias WAI<span>0</span></a> -->
-				<a href="javascript:selector('news');">Noticias WAI</a>
+				<a href="javascript:selector('news');">
+					<i class="icon-news"></i>
+					Noticias WAI
+				</a>
 			</li>
 			<li class="item2">
-				<a id="Web" href="javascript:selector('web');">WAI Web Site</a>
+				<a href="javascript:selector('web');">
+					<i class="icon-web"></i>
+					WAI Web Site
+				</a>
 			</li>
-			<!-- <li class="item3"> -->
-				<!-- <a href="documents.es.html">Documentos<span>0</span></a> -->
-				<!-- <a href="javascript:selector('docu');">Documentos</a> -->
-			<!-- </li> -->
 			<li class="item3">
-				<a href="#">Documentos<mas>+</mas></a>
+				<a href="#">
+					<i class="icon-document"></i>
+					Documentos
+					<mas>+</mas>
+				</a>
 				<ul>
 					<li class="subitem1"><a href="javascript:selector('dgen');">Folletos</a></li>
 					<li class="subitem2"><a href="javascript:selector('dcat');">Catálogos</a></li>
 				</ul>
 			</li>
 			<li class="item4">
-				<a href="#">Acceso Clientes<mas>+</mas></a>
+				<a href="#">
+					<i class="icon-customer"></i>
+					Acceso Clientes
+					<mas>+</mas>
+				</a>
 				<ul>
 					<li class="subitem1"><a href="javascript:selector('send');">Enviar Orden</a></li>
 					<li class="subitem2"><a href="javascript:selector('cont');">Contactenos</a></li>
 				</ul>
 			</li>
-			<li class="item5"><a href="javascript:selector('shar');">Compartir</a>
-			</li>
-			<li class="item6"><a href="#">Lenguaje<mas>+</mas></a>
-				<ul>
-					<li class="subitem1"><a href="javascript:cambiar_idioma('en');">Inglés</a></li>
-					<li class="subitem2"><a href="javascript:cambiar_idioma('pt');">Portugués</a></li>
-				</ul>
+			<li class="item5">
+				<a href="javascript:selector('shar');">
+					<i class="icon-shareit"></i>
+					Compartir
+				</a>
 			</li>
 			<li class="item7">
-				<a href="javascript:selector('newp');">Nuevos Productos</a>
+				<a href="javascript:selector('newp');">
+					<i class="icon-new"></i>
+					Nuevos Productos
+				</a>
 			</li>
 			<li class="item8">
-				<a href="javascript:noti_mail();">Feedback</a>
+				<a href="javascript:noti_mail();">
+					<i class="icon-feedback"></i>
+					Feedback
+				</a>
 			</li>
-			<li class="item9" id="inout">
-				<a id="inout1" href="javascript:signinout();">Conectar</a>
-			</li>		
+			<li class="item9" id="inout90">
+				<a href="javascript:signinout();">
+					<i class="icon-signin"></i>
+					Conectar
+				</a>
+			</li>			
+			<li class="item9" id="inout91">
+				<a href="javascript:signinout();">
+					<i class="icon-signout"></i>
+					Desconectar
+				</a>
+			</li>
+			<li class="item10">
+				<a href="javascript:selector('sett');">
+					<i class="icon-config"></i>
+					Configuración
+				</a>
+			</li>
 		</ul>
 	</div>
 

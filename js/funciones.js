@@ -30,11 +30,11 @@ function cambiar_idioma(idioma)
 {
 	localStorage.idioma = idioma;
 	if (idioma == "es") {
-		self.location.href="index.es.html";
+		self.location.href="config.es.html";
 	} else if (idioma == "pt") {
-		self.location.href="index.pt.html";
+		self.location.href="config.pt.html";
 	} else {
-		self.location.href="index.en.html";
+		self.location.href="config.en.html";
 	}
 }
 
@@ -46,40 +46,37 @@ function user_ini () {
 		var tit = document.getElementById('usuario');
 		tit.childNodes[0].nodeValue = usuario;
 
-		var idioma = localStorage.idioma;
-		if (idioma != null && idioma != "" && idioma != false && idioma != undefined){
-		} else {
-			idioma = "en";
-			localStorage.idioma = "en";
-		}
-
-		var iao = document.getElementById('inout1');
-		if (idioma == "es") {
-			iao.childNodes[0].nodeValue = "Desconectar";
-		} else if (idioma == "pt") {
-			iao.childNodes[0].nodeValue = "Desligar";
-		} else {
-			iao.childNodes[0].nodeValue = "Sign Out";
-		}
-
-		document.getElementById('inout').className = 'item9';
+		var x = document.getElementById('inout91');
+		x.style.display = 'block'; 
 	} else {
-		document.getElementById('inout').className = 'item91';
+		var x = document.getElementById('inout90');
+		x.style.display = 'block'; 
 	}
+
+	//=============================================== 
+
+	var idnotify = localStorage.idnotify;
+
+	if (idnotify != null && idnotify != "" && idnotify != false && idnotify != undefined){
+		var x = document.getElementById('item21');
+		x.style.display = 'block'; 
+	}
+
+	//=============================================== 
 
 	new_span();
 }
 
 function menu_dina(opcion){
 	var idiom = localStorage.idioma;
-    menu_ini = ['inde','news','docu','send','cont','shar','newp'];
-    menu_txt = ['index','news','documents','sendorder','contact','share','newprod'];
+    menu_ini = ['inde','news','dgen','dcat','send','cont','shar','newp'];
+    // menu_txt = ['index','news','documents','sendorder','contact','share','newprod'];
     if (idiom == 'es'){
-        menu_des = ['Menu Principal','Noticias WAI','Documentos','Enviar Orden','Contactenos','Compartir','Nuevos Productos'];
+        menu_des = ['Menu Principal','Noticias WAI','Folletos','Catálogos','Enviar Orden','Contactenos','Compartir','Nuevos Productos'];
     } else if (idiom == 'pt'){
-    	menu_des = ['Menu Principal','Publicações WAI','Arquivos','Enviar Ordem','Contatenos','Compartilhe','Novos produtos'];
+    	menu_des = ['Menu Principal','Publicações WAI','Panfletos','Catálogos','Enviar Ordem','Contatenos','Compartilhe','Novos produtos'];
     } else {
-		menu_des = ['Main Menu','WAI News','Documents','Send Order','Contact Us','Share It','New Products'];
+		menu_des = ['Main Menu','WAI News','Flyers','Catalogs','Send Order','Contact Us','Share It','New Products'];
     }
 
     var ul = document.createElement('ul');
@@ -229,6 +226,49 @@ function noti_mail_f (buttonIndex) {
 
 //===================================================================
 
+function conf_notify(){
+	var idioma = localStorage.idioma;
+	if (idioma == 'es'){
+		var msg001 = [
+			 	      '¿Recibir notificaciones?',
+				      'Mensajes',
+				      'Si',
+				      'No'
+				     ];
+    } else if (idioma == 'pt'){
+    	var msg001 = [
+    		          'Receber notificações?',
+    		          'Mensagens',
+    		          'Se',
+    		          'Não'
+    		         ];
+    } else {
+        var msg001 = [
+                      'Receive notifications?',
+                      'Messages',
+                      'Yes',
+                      'No'
+                     ];
+    }
+
+    navigator.notification.confirm(
+        msg001[0],     			// message
+        conf_notify_f,          // callback
+        msg001[1],      		// title
+        [msg001[2],msg001[3]]  	// buttonName
+    );
+}
+
+function conf_notify_f (buttonIndex) {
+    if(buttonIndex == 1){
+		localStorage.notify = "si";
+	} else {
+		localStorage.notify = "no";
+	}
+} 
+
+//===================================================================
+
 function closeApp(){
 	var idioma = localStorage.idioma;
 	if (idioma == 'es'){
@@ -327,6 +367,11 @@ function selector(rutina){
 		    ref.addEventListener("loaderror", onOffline, false);	
     	}else if(rutina=="regi"){
 			self.location.href="registro.en.html";
+    	}else if(rutina=="sett"){
+			self.location.href="config.en.html";
+    	}else if(rutina=="cali"){
+	        var ref = window.open('https://play.google.com/store/apps/details?id=nms.wai.android', '_blank', 'location=no');
+		    ref.addEventListener("loaderror", onOffline, false);
 		}
     }else if(idioma == 'es'){
 		if(rutina=='inde'){
@@ -359,6 +404,11 @@ function selector(rutina){
 		    ref.addEventListener("loaderror", onOffline, false);	
     	}else if(rutina=="regi"){
 			self.location.href="registro.es.html";
+    	}else if(rutina=="sett"){
+			self.location.href="config.es.html";
+    	}else if(rutina=="cali"){
+	        var ref = window.open('https://play.google.com/store/apps/details?id=nms.wai.android', '_blank', 'location=no');
+		    ref.addEventListener("loaderror", onOffline, false);
 		}
     }else if(idioma == 'pt'){
 		if(rutina=='inde'){
@@ -391,6 +441,11 @@ function selector(rutina){
 		    ref.addEventListener("loaderror", onOffline, false);	
     	}else if(rutina=="regi"){
 			self.location.href="registro.pt.html";
+    	}else if(rutina=="sett"){
+			self.location.href="config.pt.html";
+    	}else if(rutina=="cali"){
+	        var ref = window.open('https://play.google.com/store/apps/details?id=nms.wai.android', '_blank', 'location=no');
+		    ref.addEventListener("loaderror", onOffline, false);		
 		}
     }
 }

@@ -37,6 +37,14 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        try {
+          var idnotify = localStorage.idnotify;
+          if (idnotify == null || idnotify == "" || idnotify == undefined){
+              var pushNotification = window.plugins.pushNotification;
+              pushNotification.register(this.successHandler, this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationGCM"});
+          }
+        }catch(err) {
+        }
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
@@ -45,5 +53,54 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    errorHandler: function(e) {
+    },
+    onNotificationGCM: function(e) {
+        switch( e.event ) {
+            case 'registered':
+            if ( e.regid.length > 0 ) {
+                try {
+                    localStorage.idnotify = e.regid;
+                    var notification = localStorage.notify;
+                    if (notification == null || notification == "" || notification == 'si' || notification == undefined){
+                      var request = new XMLHttpRequest();
+                      request.open("GET", "http://www.wai-news.com/index.php?option=com_jbackend&view=request&action=put&module=push&resource=register&token=" + e.regid + "&appcode=nms.wai.001&platform=android",
+                      true);
+                      request.send();
+                    }
+                }catch(err) {
+                }
+            }
+            break;
+            case 'message':
+            var pushNotification = window.plugins.pushNotification;
+            try {
+                var title = '';
+                var idioma = localStorage.idioma;
+                if (idioma == 'es'){
+                    title = 'Notificación';
+                } else if (idioma == 'pt'){
+                    title = 'Notificação';
+                } else {
+                    title = 'Notification';
+                }
+                navigator.notification.alert(e.payload.message, null, e.payload.title != '' ? e.payload.title : title, 'OK');
+                if (e.payload.sound) {
+                    var snd = new Media(e.payload.sound);
+                    snd.play();
+                }
+                if (e.payload.badge){
+                    pushNotification.setApplicationIconBadgeNumber(this.successBadge, this.errorHandler, e.payload.badge);
+                }
+
+            }catch(err) {
+            }
+            break;
+            case 'error':
+            break;
+            default:
+            break;
+        }
     }
 };

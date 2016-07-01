@@ -63,6 +63,7 @@ var app = {
     onNotificationGCM: function(e) {
         switch( e.event ) {
             case 'registered':
+            alert(e);
             if ( e.regid.length > 0 ) {
                 try {
                     localStorage.idnotify = e.regid;

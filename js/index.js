@@ -16,7 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
- try{
 var app = {
     // Application Constructor
     initialize: function() {
@@ -45,6 +44,7 @@ var app = {
               pushNotification.register(this.successHandler, this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationGCM"});
           }
         }catch(err) {
+            alert(err);
         }
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
@@ -71,6 +71,7 @@ var app = {
                       request.send();
                     }
                 }catch(err) {
+                    alert(err);
                 }
             }
             break;
@@ -96,6 +97,7 @@ var app = {
                 }
 
             }catch(err) {
+                alert(err);
             }
             break;
             case 'error':
@@ -105,4 +107,3 @@ var app = {
         }
     }
 };
-}catch(err){alert(err);}

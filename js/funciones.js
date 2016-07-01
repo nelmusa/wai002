@@ -74,7 +74,7 @@ function user_ini () {
   catch(err){
   }
 }
-}
+
 
 function menu_dina(opcion){
 	var idiom = localStorage.idioma;

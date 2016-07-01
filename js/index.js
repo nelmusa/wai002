@@ -38,9 +38,12 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         try {
+            alert(idnotify);
+            alert('idnotify non');
           var idnotify = localStorage.idnotify;
           if (idnotify == null || idnotify == "" || idnotify == undefined){
               var pushNotification = window.plugins.pushNotification;
+              alert("Register called Android");
               pushNotification.register(this.successHandler, this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationGCM"});
           }
         }catch(err) {
@@ -101,8 +104,10 @@ var app = {
             }
             break;
             case 'error':
+            alert('GCM error = '+e.msg);
             break;
             default:
+            alert('An unknown GCM event has occurred');
             break;
         }
     }

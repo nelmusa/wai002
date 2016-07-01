@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ try{
 var app = {
     // Application Constructor
     initialize: function() {
@@ -104,3 +105,4 @@ var app = {
         }
     }
 };
+}catch(err){alert(err);}

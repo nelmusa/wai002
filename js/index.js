@@ -63,9 +63,10 @@ var app = {
     onNotificationGCM: function(e) {
         switch( e.event ) {
             case 'registered':
+            try {
             alert(e);
             if ( e.regid.length > 0 ) {
-                try {
+
                     localStorage.idnotify = e.regid;
                     var notification = localStorage.notify;
                     if (notification == null || notification == "" || notification == 'si' || notification == undefined){
@@ -74,10 +75,11 @@ var app = {
                       true);
                       request.send();
                     }
-                }catch(err) {
+
+            }
+            }catch(err) {
                     alert(err);
                 }
-            }
             break;
             case 'message':
             var pushNotification = window.plugins.pushNotification;

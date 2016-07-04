@@ -61,6 +61,7 @@ var app = {
     errorHandler: function(e) {
     },
     onNotificationGCM: function(e) {
+        alert(e);
         switch( e.event ) {
             case 'registered':
             try {

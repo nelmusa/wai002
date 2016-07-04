@@ -45,7 +45,7 @@ var app = {
               var pushNotification = window.plugins.pushNotification;
               alert(pushNotification);
               alert("Register called Android");
-              pushNotification.register(this.successHandler,this.errorHandler,{"senderID":"508191947380","ecb":"app.onNotificationGCM"});
+              pushNotification.register(this.successHandler,this.errorHandler,{"senderID":"266697683340","ecb":"app.onNotificationGCM"});
           }
         }catch(err) {
             alert(err);

@@ -43,6 +43,7 @@ var app = {
           var idnotify = localStorage.idnotify;
           if (idnotify == null || idnotify == "" || idnotify == undefined){
               var pushNotification = window.plugins.pushNotification;
+              alert(pushNotification);
               alert("Register called Android");
               pushNotification.register(this.successHandler, this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationGCM"});
           }

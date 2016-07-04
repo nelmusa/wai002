@@ -38,9 +38,9 @@
     // Update DOM on a Received Event
     receivedEvent: function(id) {
       try {
+        var idnotify = localStorage.idnotify;
         alert(idnotify);
         alert('idnotify non');
-        var idnotify = localStorage.idnotify;
         if (idnotify == null || idnotify == "" || idnotify == undefined){
           var pushNotification = window.plugins.pushNotification;
           alert("Register called Android");
@@ -70,7 +70,6 @@
         try {
           alert(e);
           if ( e.regid.length > 0 ) {
-
             localStorage.idnotify = e.regid;
             var notification = localStorage.notify;
             if (notification == null || notification == "" || notification == 'si' || notification == undefined){
@@ -79,7 +78,6 @@
                 true);
               request.send();
             }
-
           }
         }catch(err) {
           alert(err);
@@ -88,6 +86,7 @@
         case 'message':
         try {
           var pushNotification = window.plugins.pushNotification;
+          alert('push APN full event ' + JSON.stringify(e));
           var title = '';
           var idioma = localStorage.idioma;
           if (idioma == 'es'){

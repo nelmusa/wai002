@@ -41,7 +41,7 @@
       var idnotify = localStorage.idnotify;
       if (idnotify == null || idnotify == "" || idnotify == undefined){
         var pushNotification = window.plugins.pushNotification;
-        pushNotification.register(this.successHandler,this.errorHandler,{"senderID":"266697683340","ecb":"app.onNotificationGCM"});
+        pushNotification.register(this.successHandler,this.errorHandler,{"senderID":"804132887754","ecb":"app.onNotificationGCM"});
       }
     }catch(err) {
     }

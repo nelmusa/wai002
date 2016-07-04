@@ -43,7 +43,6 @@ var app = {
           var idnotify = localStorage.idnotify;
           if (idnotify == null || idnotify == "" || idnotify == undefined){
               var pushNotification = window.plugins.pushNotification;
-              alert(pushNotification);
               alert("Register called Android");
               pushNotification.register(this.successHandler,this.errorHandler,{"senderID":"266697683340","ecb":"app.onNotificationGCM"});
           }
@@ -60,10 +59,9 @@ var app = {
         console.log('Received Event: ' + id);
     },
     errorHandler: function(e) {
+        alert(e);
     },
     onNotificationGCM: function(e) {
-        try {
-        alert(e);
         switch( e.event ) {
             case 'registered':
             try {
@@ -116,8 +114,5 @@ var app = {
             alert('An unknown GCM event has occurred');
             break;
         }
-        }catch(err) {
-                    alert(err);
-                }
     }
 };

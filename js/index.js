@@ -62,6 +62,7 @@ var app = {
     errorHandler: function(e) {
     },
     onNotificationGCM: function(e) {
+        try {
         alert(e);
         switch( e.event ) {
             case 'registered':
@@ -115,5 +116,8 @@ var app = {
             alert('An unknown GCM event has occurred');
             break;
         }
+        }catch(err) {
+                    alert(err);
+                }
     }
 };

@@ -22,10 +22,10 @@ function informacion() {
 	var txt =  "Size: " + screen.width + " x " + screen.height + "\n";
 	    txt += "Hardware: " + device.model + "\n";
 	    txt += "O.System: " + device.platform + " " + device.version + "\n";
-	    txt += "App version: " + localStorage.version;
-	    txt += "Usr Reg: " + localStorage.usuario;
-	    txt += "Language: " + localStorage.idioma;
-	    txt += "Notify: " + localStorage.notify;
+	    txt += "App version: " + localStorage.version + "\n";
+	    txt += "Usr Reg: " + localStorage.usuario + "\n";
+	    txt += "Language: " + localStorage.idioma + "\n";
+	    txt += "Notify: " + localStorage.notify + "\n";
 	    txt += "Notify ID: " + localStorage.idnotify;
 	showAlert(txt,'Information');
 }
